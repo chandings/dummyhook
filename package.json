@@ -2,6 +2,9 @@
     "name": "your-api",
     "version": "1.0.0",
     "main": "api/index.js",
+    "scripts": {
+        "start": "node api/index.js"
+    },
     "dependencies": {
         "typescript": "^5.0.0",
         "@vercel/node": "^2.0.0",
