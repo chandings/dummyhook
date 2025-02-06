@@ -1,14 +1,23 @@
 {
-    "name": "your-api",
-    "version": "1.0.0",
-    "main": "api/index.js",
-    "scripts": {
-        "start": "node api/index.js"
-    },
-    "dependencies": {
-        "typescript": "^5.0.0",
-        "@vercel/node": "^2.0.0",
-        "cors": "^2.8.5",
-        "express": "^4.18.2"
-    }
+  "name": "dummyhook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandings/dummyhook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chandings/dummyhook/issues"
+  },
+  "homepage": "https://github.com/chandings/dummyhook#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
