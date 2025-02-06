@@ -23,8 +23,9 @@ app.get('/', (req, res) => {
     let htmlStr = `<h1>Dummy Hook</h1>
     <P>This site holds messages for any post! Apis:</p>
     <ul>
-    <li>POST /<key>: This will save the json body</li>
-    <li>GET /count, [header Data-key:<key>]:This will give the number of requests held for the given <key></li>
+    <li>POST /[key]: This will save the json body</li>
+    <li>GET /count, [header Data-key:[key
+    ]:This will give the number of requests held for the given <key></li>
     <li>GET /dump-data, [header Data-key:<key>]:This will return an array of requests held for the given key and empty the requests <key></li>
     </ul>
     <h3>Current Keys held</h3>
