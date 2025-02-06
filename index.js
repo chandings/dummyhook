@@ -42,6 +42,24 @@ app.post('/:key', (req, res) => {
     res.json({ message: `Data stored successfully for key: ${key}` });
 });
 
+app.get('/dump-data', (req, res) => {
+    const key = req.header('Data-Key');
+    console.log("key", key)
+    if (!key) return res.status(400).json({ message: 'Data-Key header is required' });
+    if (!dataStore[key]) return res.status(404).json({ message: `No data found for key: ${key}` });
+    const data = dataStore[key];
+    delete dataStore[key];
+    res.status(200).json(data);
+});
+
+app.get('/count', (req, res) => {
+    const key = req.header('Data-Key');
+    console.log("key", key)
+    if (!key) return res.status(400).json({ message: 'Data-Key header is required' });
+    const count = dataStore[key] ? dataStore[key].length : 0;
+    res.status(200).json({ key, count });
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
