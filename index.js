@@ -7,9 +7,14 @@ app.use(express.json());
 
 let dataStore = {};
 const getAllCountInLI = ()=>{
-    returnValue = "";
+    returnValue = "<ul>";
     for (let key in dataStore) {
         returnValue +=`<li>key:${key}, count: ${dataStore[key]?dataStore[key].length:0}</li>` 
+    }
+    if(returnValue === "<ul>"){
+        returnValue = "<p>No keys added yet!</p>"
+    }else{
+        returnValue+="</ul>"
     }
     return returnValue
 }
@@ -23,7 +28,7 @@ app.get('/', (req, res) => {
     <li>GET /dump-data, [header Data-key:<key>]:This will return an array of requests held for the given key and empty the requests <key></li>
     </ul>
     <h3>Current Keys held</h3>
-    <ul>${getAllCountInLI()}</ul>
+    ${getAllCountInLI()}
     <p>Enjoy!</p>
     `
     res.send(htmlStr);
