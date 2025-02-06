@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 app.post('/:key', (req, res) => {
     const key = req.params.key;
     if (!dataStore[key]) dataStore[key] = [];
-    dataStore[key].push({
+    dataStore[key].unshift({
         method: req.method,
         headers: req.headers,
         body: req.body,
